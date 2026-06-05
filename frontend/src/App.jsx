@@ -3,20 +3,25 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import Mascotas from './pages/Mascotas';
 import Citas from './pages/Citas';
+import logo from './assets/Logo.png.jpeg'; // Importamos tu logo
+import './App.css'; 
 
 function App() {
   return (
     <Router>
-      <div style={{ backgroundColor: '#1a1a1a', minHeight: '100vh', fontFamily: 'sans-serif', color: 'white' }}>
-        {/* Barra de navegación provisional tipo app móvil */}
-        <nav style={{ display: 'flex', gap: '20px', padding: '15px', backgroundColor: '#2a2a2a', justifyContent: 'center' }}>
-          <Link to="/" style={{ color: '#4da6ff', textDecoration: 'none', fontWeight: 'bold' }}>Inicio</Link>
-          <Link to="/mascotas" style={{ color: '#4da6ff', textDecoration: 'none', fontWeight: 'bold' }}>Mascotas</Link>
-          <Link to="/citas" style={{ color: '#4da6ff', textDecoration: 'none', fontWeight: 'bold' }}>Citas</Link>
-        </nav>
+      <div className="bg-rey-dark min-h-screen text-white">
+        {/* Barra de navegación estilizada con Tailwind */}
+       <nav className="navbar">
+  <img src={logo} alt="Logo Mascota Rey" className="logo" />
+  <div className="nav-links">
+    <Link to="/">Inicio</Link>
+    <Link to="/mascotas">Mascotas</Link>
+    <Link to="/citas">Citas</Link>
+  </div>
+</nav>
 
-        {/* Zona dinámica donde cambian las pantallas */}
-        <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+        {/* Zona dinámica */}
+        <div className="max-w-4xl mx-auto p-8">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mascotas" element={<Mascotas />} />
