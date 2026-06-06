@@ -33,6 +33,21 @@ function Citas() {
       <input name="servicio" placeholder="Servicio (Baño, Corte...)" onChange={handleChange} />
       <input name="fecha" type="date" onChange={handleChange} />
       
+      <div className="aviso-anticipo" style={{ 
+    border: '1px solid #D4AF37', 
+    padding: '15px', 
+    margin: '20px auto', 
+    maxWidth: '500px', 
+    color: '#D4AF37',
+    textAlign: 'center',
+    borderRadius: '8px'
+}}>
+    <h3>Información de Reserva</h3>
+    <p>Para clientes nuevos, se requiere un <strong>depósito de $20.000</strong> para confirmar la cita.</p>
+    <p style={{ fontSize: '0.9rem' }}>Este valor es parte del pago total o se toma como tarifa en caso de inasistencia (a menos que canceles con 1 día de anticipación).</p>
+</div>
+
+
       <button onClick={enviarWhatsApp} className="btn-whatsapp">
         Agendar por WhatsApp
       </button>
@@ -41,3 +56,4 @@ function Citas() {
 }
 
 export default Citas;
+
